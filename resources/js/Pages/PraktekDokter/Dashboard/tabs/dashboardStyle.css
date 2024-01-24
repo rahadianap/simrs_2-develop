@@ -1,0 +1,318 @@
+@import url("https://fonts.googleapis.com/css?family=Lato:700,600,400|Inter:400");
+:root {
+/* 
+Dashboard Style Guide:
+1. Master Color
+    a. Black
+    b. White
+    c. Primary
+    d. Secondary
+2. Font Family
+3. Font Styling 
+    a. Font Size
+    b. Font Weight
+    c. Font Class
+4. Box Sizing
+
+*/
+/* ----------- Non-Retina Screens ----------- */
+@media screen 
+  and (min-device-width: 1200px) 
+  and (max-device-width: 1600px) 
+  and (-webkit-min-device-pixel-ratio: 1) { 
+}
+
+/* ----------- Retina Screens ----------- */
+@media screen 
+  and (min-device-width: 1200px) 
+  and (max-device-width: 1600px) 
+  and (-webkit-min-device-pixel-ratio: 2)
+  and (min-resolution: 192dpi) { 
+} 
+
+/* 1. Master Color */
+    --black:rgba(0,0,0,1);
+    --black2:rgba(0,0,0,2);
+    --blue-1:rgba(17,137,130, 0.50);
+    --blue-2:rgba(55,76,199,1);
+    --gray:rgba(129,129,129,1);
+    --gray-2:rgba(160,164,168,1);
+    --space-1:rgba(78,105,110,1);
+    --space-2:rgba(79,79,79,1);
+    --red-rose:rgba(207,96,101,1);
+    --alto:rgba(217,217,217,0.549);
+    --white:rgba(240,240,240,1);
+    --white-2:rgba(255,255,255,1);
+    --yellow-1:rgba(250,192,50,1);
+    --yellow-2:rgba(2522,233,152,1);
+/* END MASTER COLOR */
+
+/* --font-m: 10px;
+--font-l: 11px;
+--font-xl: 11.2px;
+--font-2xl: 14px;
+--font-3xl:15px;
+--font-4xl: 25.2px; */
+/* END FONT SIZE */
+
+
+/* 2. Font fam */
+--lato:"Lato";
+--inter:"Inter";
+--poppins:"Poppins";
+/* END FONT FAMILY */
+
+
+
+/* 3. Font style */
+/** a. Font size **/
+--font-sm-7:7px;
+--font-sm-10:10px;
+--font-sm-12:12px;
+--font-sm-13:13px;
+
+--font-md-14:14px;
+--font-md-15:15px;
+--font-md-16:16px;
+--font-md-18:18px;
+
+--font-lg-22:22px;
+--font-lg-26:26px;
+
+--font-xl:30px;
+
+--font-2xl:40px;
+
+--font-3xl:65px;
+/** end font size **/
+
+/** b. Font Weight **/
+--regular:100;
+--medium:250;
+--semibold:400;
+--bold:700;
+/** end font weight **/
+
+/** c. font class **/
+.lato-sm-7-semibold {
+    font-family: var(--lato);
+    font-size: var(--font-sm-7);
+    font-weight: var(--semibold);
+    line-height: 12px;
+    letter-spacing: 0;
+}
+
+.lato-sm-10-semibold {
+    font-family: var(--lato);
+    font-size: var(--font-sm-10);
+    font-weight: var(--semibold);
+    line-height: 12px;
+    letter-spacing: 0.1px;
+}
+
+.lato-sm-10-bold {
+    font-family: var(--lato);
+    font-size: var(--font-sm-10);
+    font-weight: var(--bold);
+    line-height: 12px;
+    letter-spacing: 0.2px;
+}
+
+.lato-sm-12-regular {
+    font-family: var(--lato);
+    font-size: var(--font-sm-12);
+    font-weight: var(--regular);
+    line-height: 16px;
+    letter-spacing: 0.1px;
+}
+
+.lato-sm-12-bold {
+    font-family: var(--lato);
+    font-size: var(--font-sm-12);
+    font-weight: var(--bold);
+    line-height: 16px;
+    letter-spacing: 0.1px;
+}
+.lato-sm-13-regular {
+    font-family: var(--lato);
+    font-size: var(--font-sm-13);
+    font-weight: var(--regular);
+    line-height: 16px;
+    letter-spacing: 0.1px;
+}
+.lato-sm-13-semibold {
+    font-family: var(--lato);
+    font-size: var(--font-sm-13);
+    font-weight: var(--semibold);
+    line-height: 16px;
+    letter-spacing: 0.1px;
+}
+.lato-md-14-medium {
+    font-family: var(--lato);
+    font-size: var(--font-md-14);
+    font-weight: var(--medium);
+    line-height: 20px;
+    letter-spacing: 0.1px;
+}
+.lato-md-14-bold {
+    font-family: var(--lato);
+    font-size: var(--font-md-14);
+    font-weight: var(--bold);
+    line-height: 20px;
+    letter-spacing: 0.1px;
+}
+.text-initials {
+    font-family: var(--lato);
+    font-size: var(--font-md-15);
+    font-weight: var(--regular);
+    line-height: 24px;
+    letter-spacing: 1px;
+}
+.text-button {
+    font-family: var(--lato);
+    font-size: var(--font-md-15);
+    font-weight: var(--regular);
+    line-height: 18px;
+    letter-spacing: 0.2px;
+}
+.lato-md-14-regular {
+    font-family: var(--lato);
+    font-size: var(--font-md-14);
+    font-weight: var(--regular);
+    line-height: 21px;
+    letter-spacing: 0.3px;
+}
+.lato-md-14-medium {
+    font-family: var(--lato);
+    font-size: var(--font-md-14);
+    font-weight: var(--medium);
+    line-height: 21px;
+    letter-spacing: 0.3px;
+}
+.lato-md-16-regular {
+    font-family: var(--lato);
+    font-size: var(--font-md-16);
+    font-weight: var(--regular);
+    line-height: 24px;
+    letter-spacing: 0.1px;
+}
+.lato-md-16-medium {
+    font-family: var(--lato);
+    font-size: var(--font-md-16);
+    font-weight: var(--medium);
+    line-height: 24px;
+    letter-spacing: 0.1px;
+}
+.lato-md-16-semibold {
+    font-family: var(--lato);
+    font-size: var(--font-md-16);
+    font-weight: var(--semibold);
+    line-height: 24px;
+    letter-spacing: 0.1px;
+}
+.lato-md-16-bold {
+    font-family: var(--lato);
+    font-size: var(--font-md-16);
+    font-weight: var(--bold);
+    line-height: 24px;
+    letter-spacing: 0.1px;
+}
+.lato-md-18-bold {
+    font-family: var(--lato);
+    font-size: var(--font-md-18);
+    font-weight: var(--bold);
+    line-height: 24px;
+    letter-spacing: 0.2px;
+}
+.lato-md-18-semibold {
+    font-family: var(--lato);
+    font-size: var(--font-md-18);
+    font-weight: var(--semibold);
+    line-height: 24px;
+    letter-spacing: 0.1px;
+}
+.lato-md-18-regular {
+    font-family: var(--lato);
+    font-size: var(--font-md-18);
+    font-weight: var(--regular);
+    line-height: 24px;
+    letter-spacing: 0.1px;
+}
+.lato-lg-22-bold {
+    font-family: var(--lato);
+    font-size: var(--font-lg-22);
+    font-weight: var(--bold);
+    line-height: 26x;
+    letter-spacing: 0.1px;
+}
+.lato-lg-22-semibold {
+    font-family: var(--lato);
+    font-size: var(--font-lg-22);
+    font-weight: var(--semibold);
+    line-height: 26px;
+    letter-spacing: 0.2px;
+}
+.lato-lg-26-semibold {
+    font-family: var(--lato);
+    font-size: var(--font-lg-26);
+    font-weight: var(--semibold);
+    line-height: 34px;
+    letter-spacing: 0.2px;
+}
+.lato-lg-26-bold {
+    font-family: var(--lato);
+    font-size: var(--font-lg-26);
+    font-weight: var(--bold);
+    line-height: 34px;
+    letter-spacing: 0.2px;
+}
+.lato-lg-26-regular {
+    font-family: var(--lato);
+    font-size: var(--font-lg-26);
+    font-weight: var(--regular);
+    line-height: 34px;
+    letter-spacing: 0.2px;
+}
+.lato-xl-regular {
+    font-family: var(--lato);
+    font-size: var(--font-xl-30);
+    font-weight: var(--regular);
+    line-height: 40px;
+    letter-spacing: 0.2px;
+}
+.lato-xl-bold {
+    font-family: var(--lato);
+    font-size: var(--font-xl-30);
+    font-weight: var(--bold);
+    line-height: 40px;
+    letter-spacing: 0.2px;
+}
+.lato-xl-semibold {
+    font-family: var(--lato);
+    font-size: var(--font-xl-30);
+    font-weight: var(--semibold);
+    line-height: 40px;
+    letter-spacing: 0.2px;
+}
+.lato-2xl {
+    font-family: var(--lato);
+    font-size: var(--font-2xl-40);
+    font-weight: var(--bold);
+    line-height: 46px;
+    letter-spacing: 0.2px;
+}
+.lato-3xl {
+    font-family: var(--lato);
+    font-size: var(--font-3xl-65);
+    font-weight: var(--bold);
+    line-height: 46px;
+    letter-spacing: 0.4px;
+}
+/* END FONT STYLE */
+
+
+
+/* 4. Box Sizing */
+
+/* END BOX SIZING */
+}

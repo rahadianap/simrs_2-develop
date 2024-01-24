@@ -1,0 +1,11 @@
+{
+    "name": "PatologiAnatomi",
+    "alias": "patologianatomi",
+    "description": "",
+    "keywords": [],
+    "priority": 0,
+    "providers": [
+        "Modules\\PatologiAnatomi\\Providers\\PatologiAnatomiServiceProvider"
+    ],
+    "files": []
+}

@@ -1,0 +1,493 @@
+.hims-table {
+    margin:0;
+    padding:0;
+}
+.hims-table thead {
+    border:none;
+    border-top:2px solid #cc0202;
+    position:sticky;
+    top:0;
+    z-index:100;
+}
+
+.hims-table th {
+    /* position:sticky; 
+    z-index:99; */
+    padding:1em;
+    /* top:0;  */
+    width: auto; 
+    text-align:left;
+    white-space: pre-wrap;
+    font-size: 14px;
+    border:none; 
+    color: white;
+    font-weight: 400;
+    /* background-color : #1E90FF;  */
+    background-color : #cc0202; 
+    /* background-color : #fefefe; */
+}
+
+.hims-table tbody tr {
+    padding:0;
+    margin:0;
+    border-top:1px solid #f9f9f9;
+}
+
+.hims-table td {
+    white-space: pre-wrap; 
+    font-size: 12px; 
+    border: none;
+    color: black;
+    padding: 1.2em 1em 1.2em 1em;
+    background-color: #fefefe;
+}
+
+.hims-table tbody tr:hover td {
+    background-color: #fafafa;
+}
+
+.hims-table .row-link {
+    font-size: 12px;
+    font-weight:500;
+    text-decoration:none;
+}
+
+.hims-table .row-link:hover {
+    font-weight:500;
+    text-decoration:underline;
+    cursor:pointer;
+}
+a.row-link-menu {
+    font-weight:500;
+    font-size: 12px; 
+    text-decoration:none;
+    color:black;
+}
+a.row-link-menu:hover {
+    font-weight:500;
+    text-decoration:underline;
+    cursor:pointer;
+}
+
+
+.hims-table-btn {
+    border:none;
+    padding:0.5em 1em 0.5em 1em;
+    min-width:20px;
+    background-color: #fefefe;
+}
+
+.hims-table-btn span {
+    margin-right:5px;
+}
+
+.hims-table-btn:hover {
+    background-color: #cc0202;
+    color:white;
+}
+
+.hims-table-btn:first-child {
+    border-bottom-left-radius: 5px;
+    border-top-left-radius: 5px;
+}
+
+.hims-table-btn:last-child {
+    border-bottom-right-radius: 5px;
+    border-top-right-radius: 5px;
+}
+
+.form-filter-table {
+    background-color: white;
+    margin-top: 1em;
+    padding:0.5em 1em 1em 1em;
+    border-radius:5px;
+}
+
+.form-filter-table label {
+    font-size:12px;
+}
+
+.form-filter-table input, .form-filter-table select {
+    font-size:12px;
+    border:1px solid #cc0202;
+}
+
+.form-filter-table button {
+    margin-top:1.6em;
+    padding:0 0.5em 0 0.5em; 
+    width:100px; 
+    background-color: #fafafa;
+    color:#333;
+}
+
+.table-filter-info {
+    padding:0.5em;
+    font-size:12px; 
+    font-style:italic;
+}
+
+.table-filter-info .filter-label {
+    margin:2px;
+    background-color: whitesmoke;
+    color:#666;
+    font-size:11px;
+    padding: 0.5em 1em 0.5em 1em;
+    /* border-radius:50px; */
+    font-size: 300;
+    display: inline-block;
+}
+
+.text-keyword-simple {
+    border:none;
+    border-right:1px solid #f0f0f0;
+    height:33px;
+    color:black;
+    border-top-left-radius:5px;
+    border-bottom-left-radius:5px;
+}
+
+.text-keyword-regular {
+    border:none;
+    border-right:1px solid #f0f0f0;
+    height:33px;
+    color:black;
+    margin-left:0;
+}
+
+.select-status-aktif {
+    width:140px;
+    border:none; 
+    border-right:1px solid #ccc;
+    height:33px;
+    margin-left:0;
+    border-top-left-radius:5px;
+    border-bottom-left-radius:5px;
+}
+
+
+th.child-table-header {
+    padding:0.5em;
+    text-align: center;
+    font-size:12px;
+    background-color:#fff;
+    font-weight: 500;
+    color:#000;
+}
+
+.child-table tr td {
+    padding:1em;
+    background-color:whitesmoke;
+}
+
+/**row*/
+/* .hims-table tbody tr {
+    padding:0;
+    margin:0;
+    border-top:1px solid #f9f9f9;
+} */
+
+/* .hims-table td {
+    white-space: pre-wrap; 
+    font-size: 12px; 
+    border: none;
+    color: black;
+    padding: 1em 1em 1em 1em;
+    background-color: #fefefe;
+} */
+
+/* .hims-table tbody tr:hover td {
+    background-color: #fafafa;
+} */
+
+/* .hims-table .row-link {
+    font-size: 12px;
+    font-weight:500;
+    text-decoration:none;
+}
+
+.hims-table .row-link:hover {
+    font-weight:500;
+    text-decoration:underline;
+    cursor:pointer;
+} */
+
+/* a.row-link-menu {
+    font-weight:500;
+    font-size: 12px; 
+    text-decoration:none;
+    color:black;
+}
+a.row-link-menu:hover {
+    font-weight:500;
+    text-decoration:underline;
+    cursor:pointer;
+} */
+
+.v-enter-active,
+.v-leave-active {
+  transition: opacity 0.2s ease-in-out;
+}
+
+.v-enter-from,
+.v-leave-to {
+  opacity: 0;
+}
+
+/**button */
+/* .hims-table-btn {
+    border:none;
+    padding:0.5em 1em 0.5em 1em;
+    min-width:20px;
+    background-color: #fefefe;
+}
+
+.hims-table-btn span {
+    margin-right:5px;
+}
+
+.hims-table-btn:hover {
+    background-color: #cc0202;
+    color:white;
+}
+
+.hims-table-btn:first-child {
+    border-bottom-left-radius: 5px;
+    border-top-left-radius: 5px;
+}
+
+.hims-table-btn:last-child {
+    border-bottom-right-radius: 5px;
+    border-top-right-radius: 5px;
+}
+.form-filter-table {
+    background-color: white;
+    padding:1em;
+    border-radius:5px;
+}
+
+.form-filter-table button {
+    padding:0.2em 1em 0.2em 1em; 
+    width:100%; 
+    background-color: #cc0202;
+    color:white;
+} */
+
+/**table pagination */
+.hims-table-pagination {
+    padding : 0 0.5em 0 0;
+    margin:0;
+    text-align : left;
+    border-bottom-right-radius: 5px;
+    border-bottom-left-radius: 5px;
+}
+
+.hims-table-pagination a {
+    display: inline-block;
+    margin:0 0 0 0;
+    padding:0;
+    color:#666;
+    font-size:14px;
+    line-height:40px;
+    min-width:40px;
+    text-align:center;
+    text-decoration: none;
+    border: 2px solid transparent;
+    color:black;
+}
+
+.hims-table-pagination a:hover {
+    background-color: #cc0202;
+    border: 2px solid #cc0202;
+    color: white;
+    font-weight:bold;
+}
+
+.hims-table-pagination a.active {
+    background-color: #cc0202;
+    border: 2px solid #cc0202;
+    color: white;
+    font-weight:bold;
+}
+.hims-table-pagination .hims-table-info {
+    margin:auto 0;
+    padding:1em;
+    font-size:12px;
+    color:#666;
+}
+.hims-table-pagination .hims-table-info span {
+    font-weight:500;
+    color:black;
+}
+
+dl.hims-description-list dt {
+    margin:0;
+    padding:0;
+    font-size:11px;
+    font-weight: bold;
+    color:#333;
+}
+
+dl.hims-description-list dd {
+    margin:0;
+    padding:0;
+    font-size:14px;
+    font-weight: 400;
+    color:#000;
+}
+
+tr.data-inactive td {
+    text-decoration: line-through;
+    font-style: italic;
+}
+.uk-input, .uk-textarea, .uk-checkbox, .uk-select {
+    border: 1px solid #999;
+    color: black;
+}
+
+.hims-form-container label {
+    color:#333;
+    font-size:12x;
+}
+
+.hims-button-primary {
+    background-color: #cc0202;
+    color: #fafafa;
+    border:2px solid #cc0202;
+}
+
+.uk-button {
+    border:2px solid #aaa;
+    font-weight:400;
+}
+
+.hims-button-primary {
+    background-color: #cc0202;
+    color: white;
+    border:2px solid #cc0202;
+    font-weight:bold;
+}
+
+.hims-button-primary:hover {
+    background-color: #cc0202;
+    color: white;
+    border:2px solid #cc0202;
+    font-weight:bold;
+}
+
+.hims-accordion-title {
+    border-bottom:1px solid #cc0202; 
+    font-size:14px; 
+    font-weight:500; 
+    background-color:#cc0202; 
+    color:white; 
+    padding:0.5em 1em 0.5em 1em;
+}
+
+.hims-accordion-title:hover {
+    color:white; 
+}
+.hims-accordion-title::before {
+    color:white;
+}
+
+.hims-form-header {
+    padding:0.5em 0 0 0; 
+    margin:1em 0 0 0;
+    position:sticky;
+    top:0;
+    background-color:white;
+    z-index:99;
+    color:#cc0202;
+}
+
+.hims-form-header h5 {
+    color:#333;
+    font-weight:500;
+    font-size:18px;
+}
+
+.hims-form-footer {
+    padding:0.5em 0 0 0; 
+    margin:1em 0 0 0;
+    position:sticky;
+    bottom:0;
+    background-color:white;
+    z-index:99;
+    color:#cc0202;
+}
+
+.hims-form-footer h5 {
+    color:#333;
+    font-weight:500;
+    font-size:18px;
+}
+
+.hims-form-subpage {
+    padding:1em;
+    margin:0 0.5em 0.5em 0.5em;
+    border-top:1px solid #cc0202;
+}
+
+tr.inaktif td {
+    text-decoration: line-through;
+    font-style: italic;
+}
+
+.hims-picker-table th {
+    font-size:14px;
+    font-weight:500; 
+    color:black;
+    padding:1em;
+}
+
+.hims-picker-table td {
+    font-size:12px;
+    font-weight:400; 
+    color: black;
+    padding:1em;
+}
+
+/**tab untuk form */
+ul.hims-tab li {
+    margin:0;
+    padding:0;
+}
+
+ul.hims-tab li h5{
+    padding:0 1em 0 1em;
+    margin:0;
+}
+
+ul.hims-tab li div a {
+    padding:0;
+    margin:0;
+    color:#000; 
+    display:block; 
+    padding:0.5em;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+ul.hims-tab li div {
+    margin:0; 
+    background-color: #eee; 
+    color:#000;
+    padding:0;
+}
+
+ul.hims-tab li.uk-active div {
+    margin:0; 
+    background-color: #fff; 
+    color:#000;
+    padding:0;
+}
+
+ul.hims-tab li div a h5 {
+    color:#666;
+    font-weight: 500;
+}
+
+ul.hims-tab li.uk-active div a h5 {
+    color:#000;
+    font-weight: 500;
+}

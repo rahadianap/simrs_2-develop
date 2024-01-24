@@ -1,0 +1,13 @@
+{
+    "name": "Penunjang",
+    "alias": "penunjang",
+    "description": "",
+    "keywords": [],
+    "priority": 0,
+    "providers": [
+        "Modules\\Penunjang\\Providers\\PenunjangServiceProvider"
+    ],
+    "aliases": {},
+    "files": [],
+    "requires": []
+}

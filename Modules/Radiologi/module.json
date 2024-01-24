@@ -1,0 +1,13 @@
+{
+    "name": "Radiologi",
+    "alias": "radiologi",
+    "description": "",
+    "keywords": [],
+    "priority": 0,
+    "providers": [
+        "Modules\\Radiologi\\Providers\\RadiologiServiceProvider"
+    ],
+    "aliases": {},
+    "files": [],
+    "requires": []
+}

@@ -1,0 +1,11 @@
+{
+    "name": "AntrianBpjs",
+    "alias": "antrianbpjs",
+    "description": "",
+    "keywords": [],
+    "priority": 0,
+    "providers": [
+        "Modules\\AntrianBpjs\\Providers\\AntrianBpjsServiceProvider"
+    ],
+    "files": []
+}

@@ -1,0 +1,13 @@
+{
+    "name": "Persediaan",
+    "alias": "persediaan",
+    "description": "",
+    "keywords": [],
+    "priority": 0,
+    "providers": [
+        "Modules\\Persediaan\\Providers\\PersediaanServiceProvider"
+    ],
+    "aliases": {},
+    "files": [],
+    "requires": []
+}

@@ -1,0 +1,13 @@
+{
+    "name": "Cetakan",
+    "alias": "cetakan",
+    "description": "",
+    "keywords": [],
+    "priority": 0,
+    "providers": [
+        "Modules\\Cetakan\\Providers\\CetakanServiceProvider"
+    ],
+    "aliases": {},
+    "files": [],
+    "requires": []
+}

@@ -1,0 +1,13 @@
+{
+    "name": "MCU",
+    "alias": "mcu",
+    "description": "",
+    "keywords": [],
+    "priority": 0,
+    "providers": [
+        "Modules\\MCU\\Providers\\MCUServiceProvider"
+    ],
+    "aliases": {},
+    "files": [],
+    "requires": []
+}

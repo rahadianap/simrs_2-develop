@@ -1,0 +1,13 @@
+{
+    "name": "ManajemenUser",
+    "alias": "manajemenuser",
+    "description": "",
+    "keywords": [],
+    "priority": 0,
+    "providers": [
+        "Modules\\ManajemenUser\\Providers\\ManajemenUserServiceProvider"
+    ],
+    "aliases": {},
+    "files": [],
+    "requires": []
+}

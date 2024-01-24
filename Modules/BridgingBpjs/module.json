@@ -1,0 +1,11 @@
+{
+    "name": "BridgingBpjs",
+    "alias": "bridgingbpjs",
+    "description": "",
+    "keywords": [],
+    "priority": 0,
+    "providers": [
+        "Modules\\BridgingBpjs\\Providers\\BridgingBpjsServiceProvider"
+    ],
+    "files": []
+}

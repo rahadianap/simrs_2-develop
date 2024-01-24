@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Cetakan Ringkas Tagihan</title>
+        <!-- styling -->
+        <link rel="stylesheet" href="{{url('css/report/style.css')}}">
+        <link rel="stylesheet" href="{{url('uikit/css/uikit.min.css')}}">
+        <style>
+            table.standard-table tr td{
+                padding: 1.2px 5px !important;
+            }
+            table.standard-table tr th, 
+            table tr td.bordered {
+                padding: 1px 5px !important;
+                border: 1px solid black;
+            }
+            table.no-border-table tr td,
+            table.no-border-table tr th {
+                padding: 0px 5px !important;
+                border: none;
+            }
+            table.standard-table thead th {
+                font-size: 11px;
+                font-weight: bold;         /* Make text bold */
+                text-transform: capitalize; /* Capitalize each word */
+            }
+            table tr th {
+                font-size:10px;
+                text-align:center !important;
+                font-weight:bold;
+            }
+        </style>
+        <!-- end styling -->
+    </head>
+    <body>
+        {{-- KOP SURAT --}}
+        @include('components.kopSurat')
+        {{-- JUDUL --}}
+        <div class="uk-align-center" style="padding:0px !important;background-color:red;">
+            <div style="font-size:14px;font-weight:bold;text-align:center;padding:0px !important;">REKAP RINCIAN TAGIHAN PASIEN</div>
+            <div style="font-size:11px;text-align:center;padding:0px !important;">Tgl Transaksi : {{ $data['transaksi'][($data['transaksi']->count()-1)]['tgl_transaksi'] }} s/d {{ $data['transaksi'][0]['tgl_transaksi'] }} </div>
+        </div>
+        <!-- Data Pasien -->
+        <table class="uk-table uk-table-small no-border-table" style="margin-top:-15px;margin:auto;width:90%;font-size:10px !important;">
+            <tr>
+                <!-- Kiri -->
+                <td style="font-weight:bold;">No.Reg / No.RM</td>
+                <td>: {{ $data['pendaftaran']['reg_id'] }} | {{ $data['pendaftaran']['no_rm'] }}</td>
+                <!-- Kanan -->
+                <td style="font-weight:bold;">Penjamain Bayar</td>
+                <td>: {{ $data['pendaftaran']['jns_penjamin'] }}</td>
+            </tr>
+            <tr>
+                <!-- Kiri -->
+                <td style="font-weight:bold;">Nama Pasien</td>
+                <td>: {{ $data['pendaftaran']['nama_pasien'] }}</td>
+                <!-- Kanan -->
+                <td style="font-weight:bold;">Instansi</td>
+                <td>: {{ $data['pendaftaran']['penjamin_nama'] }}</td>
+            </tr>
+            <tr>
+                <!-- Kiri -->
+                <td style="font-weight:bold;">Tanggal Lahir</td>
+                <td>: {{ $data['pendaftaran']['tgl_lahir'] }}</td>
+                <!-- Kanan -->
+                <td style="font-weight:bold;">Tanggal Keluar</td>
+                <td>: {{ $data['pendaftaran']['tgl_pulang'] }}</td>
+            </tr>
+            <tr>
+                <!-- Kiri -->
+                <td style="font-weight:bold;">Dokter Utama</td>
+                <td>: {{ $data['pendaftaran']['dokter_nama'] }}</td>
+                <!-- Kanan -->
+                <td style="font-weight:bold;;">Unit</td>
+                <td>: {{ $data['pendaftaran']['unit_nama'] }}</td>
+            </tr>
+            <tr>
+                <!-- Kiri -->
+                <td style="font-weight:bold;">Tanggal Periksa</td>
+                <td>: {{ $data['pendaftaran']['tgl_periksa'] }}</td>
+                <!-- Kanan -->
+                <td style="font-weight:bold;">Lama Perawatan</td>
+                <td>: -</td>
+            </tr>
+            <tr>
+                <!-- Kiri -->
+                <td rowspan="2" style="vertical-align:top;font-weight:bold;">Alamat</td>
+                <td rowspan="2" style="vertical-align:top;">: -</td>
+                <!-- Kanan -->
+                <td style="font-weight:bold;">Alasan Pulang</td>
+                <td>: {{ $data['pendaftaran']['cara_pulang'] }}</td>
+            </tr>
+            <tr>
+                
+                <!-- Kanan -->
+                <td style="font-weight:bold;">Ruang / No.Tempat Tidur</td>
+                <td>: {{ $data['pendaftaran']['bed_id'] }} / {{ $data['pendaftaran']['no_bed'] }}</td>
+            </tr>
+           
+            
+        </table>
+        <br>
+        
+        <!-- Data Transaksi / Tindakan -->
+        <table class="uk-table uk-table-small standard-table" style="margin-top:-15px;margin:auto;width:90%;font-size:10px !important;border:1px solid black;">
+            <thead>
+                <th>Uraian / Transaksi</th>
+                <th>Tanggal</th>
+                <th>Satuan</th>
+                <th>Qty</th>
+                <th>Kelas</th>
+                <th>Diskon</th>
+                <th>Harga</th>
+            </thead>
+            <tbody>
+                @php
+                    $maxIndex = count($data['detail']) - 1;
+                @endphp
+                @foreach ($data['detail'] as $index => $detail)
+                    @if ($index == 0 || $detail['kelompok_tagihan'] != $data['detail'][$index - 1]['kelompok_tagihan'])
+                        <tr>
+                            <td colspan="7" class="bordered" style="padding-left:5px;font-style:italic;">{{ $detail['kelompok_tagihan'] }}</td>
+                        </tr>
+                        @php
+                            $groupAmount = 0;
+                            $groupDicount = 0;
+                        @endphp
+                    @endif
+                    
+                    <tr>
+                        <td style="padding-left:20px !important;">
+                            {{ $detail['item_nama'] }}
+                        </td>
+                        <td style="text-align:center !important;">
+                            {{ \Carbon\Carbon::parse($detail['tgl_transaksi'])->format('d-m-Y') }}
+                        </td>
+                        <td style="text-align:right !important;">
+                            {{ number_format(floatval($detail['nilai']),2) }}
+                        </td>
+                        <td style="text-align:center !important;">
+                            {{ $detail['jumlah'] }}
+                        </td>
+                        <td style="text-align:center !important;">
+                            -
+                        </td>
+                        <td style="text-align:right !important;">
+                            {{ number_format(floatval($detail['diskon']),2) }}
+                        </td>
+                        <td style="text-align:right !important;">
+                            {{ number_format(floatval($detail['subtotal']),2) }}
+                        </td>
+                    </tr>
+                    
+                    @php
+                        $groupAmount += floatval($detail['subtotal']);
+                        $groupDicount += floatval($detail['diskon']);
+                    @endphp
+                    
+                    @if ($index == $maxIndex || $detail['kelompok_tagihan'] != $data['detail'][$index + 1]['kelompok_tagihan'])
+                        <tr>
+                            <td colspan="5" style="padding-left:5px;font-style:italic;text-align:right;">Total {{ $detail['kelompok_tagihan'] }}</td>
+                            <td style="text-align:right !important;">
+                                {{ number_format($groupDicount, 2) }}
+                            </td>
+                            <td style="text-align:right !important;">
+                                {{ number_format($groupAmount, 2) }}
+                            </td>
+                        </tr>
+                    @endif
+                @endforeach
+                <tr>
+                    <td colspan="5" style="text-align:right !important;">TOTAL</td>
+                    <td style="text-align:right !important;">
+                        {{ number_format($data['total_diskon'], 2) }}
+                    </td>
+                    <td style="text-align:right !important;">
+                        {{ number_format($data['grand_total'], 2) }}
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <br>
+        {{-- Data Total Transaksi --}}
+        <table class="uk-table uk-table-small no-border-table" style="margin-top:-15px;margin:auto;width:60%;font-size:10px !important;">
+            <tr>
+                <td colspan="3">Penjamin</td>
+                <td></td>
+                <td colspan="3">Tunai</td>
+            </tr>
+            <tr>
+                {{-- Kiri --}}
+                <td style="width:25%;">Jumlah Tagihan</td>
+                <td style="width:5%;">: </td>
+                <td style="width:20%;text-align:right !important;">0.00</td>
+                <td></td>
+                {{-- Kanan --}}
+                <td style="width:25%;">Jumlah Tagihan</td>
+                <td style="width:5%;">: </td>
+                <td style="width:20%;text-align:right !important;">{{ number_format($data['grand_total'], 2) }}</td>
+            </tr>
+            <tr>
+                {{-- Kiri --}}
+                <td>Adm & Pelayanan</td>
+                <td>: </td>
+                <td style="text-align:right !important;">0.00</td>
+                <td></td>
+                {{-- Kanan --}}
+                <td>Adm & Pelayanan</td>
+                <td>: </td>
+                <td style="text-align:right !important;">0.00</td>
+            </tr>
+            <tr>
+                {{-- Kiri --}}
+                <td></td>
+                <td></td>
+                <td style="text-align:right !important;border-top:1px dotted black;">0.00</td>
+                <td></td>
+                {{-- Kanan --}}
+                <td></td>
+                <td></td>
+                <td style="text-align:right !important;border-top:1px dotted black;">{{ number_format($data['grand_total'], 2) }}</td>
+            </tr>
+            <tr>
+                {{-- Kiri --}}
+                <td></td>
+                <td></td>
+                <td style="text-align:right !important;"></td>
+                <td></td>
+                {{-- Kanan --}}
+                <td></td>
+                <td></td>
+                <td style="text-align:right !important;"></td>
+            </tr>
+            <tr>
+                {{-- Kiri --}}
+                <td>Uang Angsuran</td>
+                <td>: </td>
+                <td style="text-align:right !important;">0.00</td>
+                <td></td>
+                {{-- Kanan --}}
+                <td>Uang Angsuran</td>
+                <td>: </td>
+                <td style="text-align:right !important;">0.00</td>
+            </tr>
+            <tr>
+                {{-- Kiri --}}
+                <td>Piutang</td>
+                <td>: </td>
+                <td style="text-align:right !important;">0.00</td>
+                <td></td>
+                {{-- Kanan --}}
+                <td>Piutang</td>
+                <td>: </td>
+                <td style="text-align:right !important;">0.00</td>
+            </tr>
+            <tr>
+                {{-- Kiri --}}
+                <td>Pelunasan</td>
+                <td>: </td>
+                <td style="text-align:right !important;">0.00</td>
+                <td></td>
+                {{-- Kanan --}}
+                <td>Pelunasan</td>
+                <td>: </td>
+                <td style="text-align:right !important;">{{ number_format($data['grand_total'], 2) }}</td>
+            </tr>
+            <tr>
+                {{-- Kiri --}}
+                <td>Diskon</td>
+                <td>: </td>
+                <td style="text-align:right !important;">0.00</td>
+                <td></td>
+                {{-- Kanan --}}
+                <td>Diskon</td>
+                <td>: </td>
+                <td style="text-align:right !important;">0.00</td>
+            </tr>
+            <tr>
+                {{-- Kiri --}}
+                <td>Diskon Administrasi</td>
+                <td>: </td>
+                <td style="text-align:right !important;">0.00</td>
+                <td></td>
+                {{-- Kanan --}}
+                <td>Diskon Administrasi</td>
+                <td>: </td>
+                <td style="text-align:right !important;">0.00</td>
+            </tr>
+            <tr>
+                {{-- Kiri --}}
+                <td>Pembulatan</td>
+                <td>: </td>
+                <td style="text-align:right !important;">0.00</td>
+                <td></td>
+                {{-- Kanan --}}
+                <td>Pembulatan</td>
+                <td>: </td>
+                <td style="text-align:right !important;">{{ number_format($data['total_pembulatan'], 2) }}</td>
+            </tr>
+            <tr>
+                {{-- Kiri --}}
+                <td>Sisa Tagihan</td>
+                <td>: </td>
+                <td style="text-align:right !important;border-top:1px dotted black;">0.00</td>
+                <td></td>
+                {{-- Kanan --}}
+                <td>Sisa Tagihan</td>
+                <td>: </td>
+                <td style="text-align:right !important;border-top:1px dotted black;">0.00</td>
+            </tr>
+            <tr>
+                {{-- Kiri --}}
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                {{-- Kanan --}}
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td colspan="7" style="text-align:center;padding-top:10px !important;">Terbilang : "{{ $data['terbilang'] }}"</td>
+            </tr>
+        </table>
+    </body>
+</html>

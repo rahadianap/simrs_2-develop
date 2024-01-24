@@ -1,0 +1,28 @@
+@font-face {
+  font-family: 'cour';
+  src: url('../../../../../Assets/fonts/cour.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'cour-bold';
+  src: url('../../../../../Assets/fonts/cour-bold.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'verdana';
+  src: url('../../../../../Assets/fonts/verdana.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'verdana-light';
+  src: url('../../../../../Assets/fonts/verdanaPro-light.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'verdana-bold';
+  src: url('../../../../../Assets/fonts/verdana-bold.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'verdana-bold-italic';
+  src: url('../../../../../Assets/fonts/verdana-bold-italic.ttf') format('truetype');
+}

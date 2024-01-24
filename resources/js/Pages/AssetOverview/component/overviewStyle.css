@@ -1,0 +1,164 @@
+@import url('https://fonts.googleapis.com/css2?family=Hind+Guntur&family=Inter&family=Nunito+Sans:wght@300;400;700;900&family=Open+Sans:wght@300;400;600&family=Work+Sans:wght@300&display=swap');
+:root {
+/* 
+Overview Style Guide
+1. Master Color
+2. Font-Size
+3. Font Family
+4. Font Styling 
+5. Box Sizing
+*/
+
+
+/* 1. Master color */
+--black: rgba(0,0,0,1);
+--black5: rgba(0,0,0,0.051);
+--black10:rgba(0,0,0,0.102);
+--black20:rgba(0,0,0,0.2);
+--black40:rgba(0,0,0,0.4);
+--black80:rgba(0,0,0,0.8);
+--black100:rgba(28,28,28,1);
+
+--congress-blue: rgba(2,77,148,1);
+--powder-pink:#FEB1DD;
+--fuscous-gray: rgba(85,85,85,1);
+--guardian-red:rgba(204, 2, 2, 0.483);
+--orange-yellow:rgba(248,209,113,1);
+--pastel-yellow:rgba(255,232,153,1);
+--reddish-orange:rgba(94%, 80%, 70%);
+--primaryblue:rgba(227,245,255,1);
+--primarywhite: rgba(255,255,255,1);
+--primarycyan: rgba(131,174,172,255);
+--bluishcyan:rgba(62,166,191,255);
+--lightcyan:rgba(71, 255, 255, 0.7);
+--pastelgreen:rgba(161,227,203,1);
+--palegreen:rgba(186,237,189,1);
+--berylgreen:rgba(220,232,186,255);
+
+
+
+/* 2. Font size */
+--font-size-xs:12px;
+--font-size-s:14px;
+--font-size-m:16px;
+--font-size-l:17px;
+--font-size-xl:24px;
+--font-size-xxl:60px;
+--font-size-xxxl:72px;
+
+
+
+/* 3. Font fam */
+--font-hindguntur:"Hind Guntur";
+--font-inter:"Inter";
+--font-nunitosans:"Nunito Sans";
+--font-nunitosansblack:"Nunito Sans-Black";
+--font-nunitosansbold:"Nunito Sans-Bold";
+--font-nunitosansregular:"Nunito Sans-Regular";
+--font-opensans:"Open Sans";
+--font-opensansregular:"Open Sans-Regular";
+--font-opensanssemibold:"Open Sans-Semibold";
+--font-worksans:"Work Sans";
+}
+
+
+/* 4. Font style */
+.x12-regular{
+    font-family: var(--font-inter);
+    font-size: var(--font-size-xs);
+    letter-spacing: 0px;
+    font-weight: 400;
+    font-style: normal;
+}
+.x12-semibold{
+    font-family: var(--font-inter);
+    font-size: var(--font-size-xs);
+    letter-spacing: 0px;
+    font-weight: 600;
+    font-style: normal;
+}
+
+.x14-regular{
+    font-family: var(--font-inter);
+    font-size: var(--font-size-s);
+    letter-spacing: 0px;
+    font-weight: 400;
+    font-style: normal;
+}
+.x14-semibold{
+    font-family: var(--font-inter);
+    font-size: var(--font-size-s);
+    letter-spacing: 0px;
+    font-weight: 600;
+    font-style: normal;
+}
+.x16-regular{
+    font-family: var(--font-inter);
+    font-size: var(--font-size-m);
+    letter-spacing: 0px;
+    font-weight: 400;
+    font-style: normal;
+}
+.x16-semibold{
+    font-family: var(--font-inter);
+    font-size: var(--font-size-m);
+    letter-spacing: 0px;
+    font-weight: 600;
+    font-style: normal;
+}
+.nunitosans-congress-blue-24px{
+    color: var(--congress-blue);
+    font-family: var(--font-nunitosans);
+    font-size: var(--font-size-xl);
+    font-weight: 700;
+    font-style: normal;
+}
+.nunitosansbold-congress-blue-24px{
+    color: var(--congress-blue);
+    font-family: var(--font-nunitosansbold);
+    font-size: var(--font-size-xl);
+    font-weight: 700;
+    font-style: normal;
+}
+.nunitosansblack-congress-blue-60px{
+    color: var(--congress-blue);
+    font-family: var(--font-nunitosansblack);
+    font-size: var(--font-size-xxl);
+    font-weight: 900;
+    font-style: normal;
+}
+.opensansnormal-fuscousgray-16px {
+    color: var(--fuscous-gray);
+    font-family: var(--font-opensans);
+    font-size: var(--font-size-m);
+    font-weight: 400;
+    font-style: normal;
+}
+.opensansregular-normal-fuscousgray-16px {
+    color: var(--fuscous-gray);
+    font-family: var(--font-opensansregular);
+    font-size: var(--font-size-m);
+    font-weight: 400;
+    font-style: normal;
+}
+.opensanssemibold-congressblue-16px{
+     color: var(--congress-blue);
+     font-family: var(--font-opensanssemibold);
+     font-size: var(--font-size-m);
+     font-weight: 600;
+     font-style: normal;
+}
+.h3overview {
+    font-family: var(--font-inter);
+    font-size: var(--font-size-xl);
+    letter-spacing: 0px;
+    font-weight: 600;
+    font-style: normal;
+}
+
+/* 5. Box Sizing */
+.main-box {
+    width: 350px;
+    height: 150px;
+}
+

@@ -1,0 +1,13 @@
+{
+    "name": "EMR",
+    "alias": "emr",
+    "description": "",
+    "keywords": [],
+    "priority": 0,
+    "providers": [
+        "Modules\\EMR\\Providers\\EMRServiceProvider"
+    ],
+    "aliases": {},
+    "files": [],
+    "requires": []
+}

@@ -1,0 +1,11 @@
+{
+    "name": "PraktekDokter",
+    "alias": "praktekdokter",
+    "description": "",
+    "keywords": [],
+    "priority": 0,
+    "providers": [
+        "Modules\\PraktekDokter\\Providers\\PraktekDokterServiceProvider"
+    ],
+    "files": []
+}
